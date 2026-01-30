@@ -1,6 +1,6 @@
 int majorityElement(int arr[], int n) {
     // code here
-    int c=0,count=0,ans;
+     int c=0,count=0,ans;
     for(int i=0;i<n;i++){
         if(c==0){
             c++;
