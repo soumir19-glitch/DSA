@@ -1,21 +1,22 @@
 class Solution {
 public:
+    double bloo(double x, long long n) {
+        if (n == 0) return 1;
+        double half = bloo(x, n / 2);
+        if (n % 2 == 0)
+            return half * half;
+        else
+            return half * half * x;
+    }
+
     double myPow(double x, int n) {
-        double ans = 1.0;
-        long long nn = n;
-        if (nn < 0)
-            nn = -1 * nn;
-        while (nn) {
-            if (nn % 2 == 0) {
-                x *= x;
-                nn /= 2;
-            } else {
-                ans *= x;
-                nn--;
-            }
+        long long N = n;
+
+        if (N < 0) {
+            x = 1 / x;
+            N = -N;
         }
-        if (n < 0)
-            ans = 1.0 / ans;
-        return ans;
+
+        return bloo(x, N);
     }
 };
