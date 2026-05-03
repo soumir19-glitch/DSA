@@ -13,9 +13,7 @@ public:
     ListNode* deleteDuplicates(ListNode* head) {
         if (head == NULL || head->next == nullptr)
             return head;
-
         ListNode* i = head;
-
         while (i && i->next) {
             if (i->val == i->next->val)
                 i->next = i->next->next;
